@@ -219,7 +219,7 @@
         const personSelect = document.getElementById("person-select");
         
         // Determinar URL Base (local o productiva)
-        let baseUrl = "https://www.aeropartes.mx/";
+        let baseUrl = "https://tarjetas-qr-toluca-jet-center.vercel.app/";
         if (window.location.protocol !== "file:") {
             const pathParts = window.location.href.split('/');
             pathParts.pop(); // Remover "descargar-qr.html"
@@ -236,7 +236,8 @@
                 height: 1200,
                 type: "canvas",
                 data: url,
-                image: "logo%20toluca%20jet%20center%20V1.png", // Logo con espacios codificados
+                // Cargamos el logo desde la URL productiva de Vercel para evitar bloqueos CORS bajo el protocolo file://
+                image: "https://tarjetas-qr-toluca-jet-center.vercel.app/logo%20toluca%20jet%20center%20V1.png",
                 dotsOptions: {
                     color: "#004B87", // Azul Royal
                     type: "rounded"
