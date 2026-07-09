@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Generador / Descarga de Código QR - Toluca Jet Center</title>
+    
+    <!-- Fuentes Google -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Montserrat:wght@700&display=swap" rel="stylesheet">
+    
+    <!-- Iconos Lucide -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    
+    <!-- Librería QR Code Styling -->
+    <script src="https://unpkg.com/qr-code-styling@1.5.0/lib/qr-code-styling.js"></script>
+    
+    <!-- Favicon usando el logo corporativo -->
+    <link rel="icon" type="image/png" href="logo%20toluca%20jet%20center%20V1.png">
+    
+    <style>
+        :root {
+            --primary-color: #004B87;
+            --secondary-color: #0F2A4A;
+            --bg-light: #F2F5FA;
+            --text-primary: #1E293B;
+            --card-bg: #FFFFFF;
+        }
+        
+        body {
+            background-color: var(--bg-light);
+            color: var(--text-primary);
+            font-family: 'Inter', sans-serif;
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+            margin: 0;
+        }
+        
+        .container {
+            width: 100%;
+            max-width: 440px;
+            background: var(--card-bg);
+            border-radius: 20px;
+            box-shadow: 0 15px 45px rgba(0, 45, 98, 0.08);
+            padding: 30px 24px;
+            text-align: center;
+            border: 1px solid rgba(0, 75, 135, 0.06);
+        }
+        
+        .logo-wrapper {
+            margin-bottom: 20px;
+        }
+        
+        .company-logo {
+            max-height: 70px;
+            max-width: 100%;
+            object-fit: contain;
+        }
+        
+        h1 {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 20px;
+            color: var(--secondary-color);
+            margin: 0 0 10px 0;
+        }
+        
+        p {
+            font-size: 13px;
+            color: #64748B;
+            line-height: 1.5;
+            margin: 0 0 20px 0;
+        }
+        
+        .input-group {
+            text-align: left;
+            margin-bottom: 20px;
+        }
+        
+        label {
+            font-size: 12px;
+            font-weight: 600;
+            color: var(--primary-color);
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            display: block;
+            margin-bottom: 6px;
+        }
+        
+        input {
+            width: 100%;
+            padding: 12px;
+            border-radius: 10px;
+            border: 1px solid rgba(0, 75, 135, 0.15);
+            background: #F8FAFC;
+            font-size: 14px;
+            box-sizing: border-box;
+            color: var(--text-primary);
+        }
+        
+        input:focus {
+            outline: none;
+            border-color: var(--primary-color);
+            background: #FFFFFF;
+        }
+        
+        .qr-wrapper {
+            background: #FFFFFF;
+            padding: 16px;
+            border-radius: 14px;
+            border: 1px solid rgba(0, 75, 135, 0.08);
+            display: inline-flex;
+            justify-content: center;
+            align-items: center;
+            margin-bottom: 20px;
+            box-shadow: 0 8px 20px rgba(0, 75, 135, 0.03);
+        }
+        
+        #qr-canvas {
+            width: 250px;
+            height: 250px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        
+        #qr-canvas canvas {
+            width: 250px !important;
+            height: 250px !important;
+            display: block;
+        }
+        
+        .btn-download {
+            width: 100%;
+            background: linear-gradient(135deg, var(--primary-color) 0%, #0070C0 100%);
+            border: none;
+            color: #FFFFFF;
+            padding: 15px;
+            border-radius: 10px;
+            font-size: 14.5px;
+            font-weight: 600;
+            cursor: pointer;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 8px;
+            box-shadow: 0 6px 20px rgba(0, 75, 135, 0.2);
+            transition: all 0.2s ease;
+        }
+        
+        .btn-download:hover {
+            transform: translateY(-1px);
+            box-shadow: 0 8px 24px rgba(0, 75, 135, 0.3);
+            opacity: 0.95;
+        }
+        
+        .back-link {
+            display: inline-block;
+            margin-top: 20px;
+            font-size: 13px;
+            color: var(--primary-color);
+            text-decoration: none;
+            font-weight: 600;
+        }
+        
+        .back-link:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <div class="logo-wrapper">
+            <img src="logo%20toluca%20jet center%20V1.png" alt="Toluca Jet Center Logo" class="company-logo">
+        </div>
+        
+        <h1>Generador de QR Branded</h1>
+        <p>Escribe la URL de tu tarjeta (ej. cuando la publiques en Vercel) y descarga el código QR listo para imprimir en tus tarjetas de presentación físicas.</p>
+        
+        <div class="input-group">
+            <label for="person-select">Selecciona el Colaborador</label>
+            <select id="person-select" style="width: 100%; padding: 12px; border-radius: 10px; border: 1px solid rgba(0, 75, 135, 0.15); background: #F8FAFC; font-size: 14px; color: var(--text-primary); margin-bottom: 15px;">
+                <option value="jose-luis-bravo-chavez.html" selected>José Luis Bravo Chávez (CEO)</option>
+                <option value="edgar-perez-espinoza.html">Edgar Pérez Espinoza (Compras)</option>
+                <option value="juan-carlos-santana-s.html">Juan Carlos Santana S. (Ventas)</option>
+                <option value="alejandra-manjarrez-gomez.html">Alejandra Manjarrez Gómez (Ventas y Fact.)</option>
+            </select>
+        </div>
+        
+        <div class="input-group">
+            <label for="url-input">URL de la Tarjeta Digital</label>
+            <input type="url" id="url-input" value="https://www.aeropartes.mx/jose-luis-bravo-chavez.html">
+        </div>
+        
+        <div class="qr-wrapper">
+            <div id="qr-canvas"></div>
+        </div>
+        
+        <button id="btn-download" class="btn-download">
+            <i data-lucide="download"></i> Guardar QR como PNG
+        </button>
+        
+        <div>
+            <a href="index.html" class="back-link"><i data-lucide="arrow-left" style="width: 14px; height: 14px; vertical-align: middle; margin-right: 4px;"></i> Ver Tarjeta de Presentación</a>
+        </div>
+    </div>
+
+    <script>
+        // Inicializar iconos
+        lucide.createIcons();
+        
+        const urlInput = document.getElementById("url-input");
+        const btnDownload = document.getElementById("btn-download");
+        const qrCanvasContainer = document.getElementById("qr-canvas");
+        const personSelect = document.getElementById("person-select");
+        
+        // Determinar URL Base (local o productiva)
+        let baseUrl = "https://www.aeropartes.mx/";
+        if (window.location.protocol !== "file:") {
+            const pathParts = window.location.href.split('/');
+            pathParts.pop(); // Remover "descargar-qr.html"
+            baseUrl = pathParts.join('/') + '/';
+        }
+        
+        let qrCodeInstance = null;
+        
+        function drawQrCode(url) {
+            qrCanvasContainer.innerHTML = ""; // Limpiar
+            
+            qrCodeInstance = new QRCodeStyling({
+                width: 1200, // Aumentado a 1200 para que al descargarlo se vea ultra nítido y el logo no se pixelee
+                height: 1200,
+                type: "canvas",
+                data: url,
+                image: "logo%20toluca%20jet%20center%20V1.png", // Logo con espacios codificados
+                dotsOptions: {
+                    color: "#004B87", // Azul Royal
+                    type: "rounded"
+                },
+                backgroundOptions: {
+                    color: "#ffffff"
+                },
+                imageOptions: {
+                    crossOrigin: "anonymous",
+                    hideBackgroundDots: true,
+                    imageSize: 0.4,
+                    margin: 4
+                },
+                cornersSquareOptions: {
+                    color: "#004B87",
+                    type: "extra-rounded"
+                },
+                cornersDotOptions: {
+                    color: "#0070C0",
+                    type: "dot"
+                },
+                qrOptions: {
+                    errorCorrectionLevel: "Q"
+                }
+            });
+            
+            qrCodeInstance.append(qrCanvasContainer);
+        }
+        
+        // Función para actualizar URL e interactuar con el QR al cambiar selección
+        function updateFromDropdown() {
+            const selectedFile = personSelect.value;
+            urlInput.value = baseUrl + selectedFile;
+            drawQrCode(urlInput.value);
+        }
+        
+        // Dibujar QR inicial
+        updateFromDropdown();
+        
+        // Cambios en selector
+        personSelect.addEventListener("change", updateFromDropdown);
+        
+        // Cambios manuales en input de URL
+        urlInput.addEventListener("input", (e) => {
+            const val = e.target.value.trim();
+            if (val) {
+                drawQrCode(val);
+            }
+        });
+        
+        // Descarga
+        btnDownload.addEventListener("click", () => {
+            if (qrCodeInstance) {
+                const selectedText = personSelect.options[personSelect.selectedIndex].text;
+                // Generar un nombre de archivo seguro y descriptivo
+                const safeName = selectedText.replace(/[^a-zA-Z0-9]/g, "_").replace(/_+/g, "_");
+                qrCodeInstance.download({
+                    name: `QR_Toluca_Jet_Center_${safeName}`,
+                    extension: "png"
+                });
+            }
+        });
+    </script>
+</body>
+</html>

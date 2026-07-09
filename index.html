@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="refresh" content="0; url=jose-luis.html">
+    <title>Redireccionando...</title>
+    <script>
+        // Si estamos en un servidor (Vercel/localhost), redirigimos a la dirección limpia '/jose-luis'
+        // Si estamos abriendo el archivo local directamente, usamos 'jose-luis.html'
+        if (window.location.protocol === 'file:') {
+            window.location.replace("jose-luis.html");
+        } else {
+            window.location.replace("/jose-luis");
+        }
+    </script>
+</head>
+<body>
+    <p>Redireccionando a la tarjeta digital... Si no eres redireccionado automáticamente, haz <a href="jose-luis.html">clic aquí</a>.</p>
+</body>
+</html>
