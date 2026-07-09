@@ -269,7 +269,9 @@
         // Función para actualizar URL e interactuar con el QR al cambiar selección
         function updateFromDropdown() {
             const selectedFile = personSelect.value;
-            urlInput.value = baseUrl + selectedFile;
+            // Si la dirección no es un archivo local, limpiamos el .html para codificar la Clean URL en el QR
+            const cleanPath = (window.location.protocol === "file:") ? selectedFile : selectedFile.replace(".html", "");
+            urlInput.value = baseUrl + cleanPath;
             drawQrCode(urlInput.value);
         }
         
