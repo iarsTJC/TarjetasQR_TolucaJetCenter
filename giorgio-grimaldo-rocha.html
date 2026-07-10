@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Giorgio Grimaldo Rocha - Toluca Jet Center</title>
+    
+    <!-- Meta tags para SEO y compartir -->
+    <meta name="description" content="Giorgio Grimaldo Rocha - Gerente Monterrey de Toluca Jet Center. Servicios de FBO y aviación ejecutiva en Toluca (MMTO).">
+    <meta property="og:title" content="Giorgio Grimaldo Rocha - Tarjeta Digital">
+    <meta property="og:description" content="Gerente Monterrey Toluca Jet Center S.A. de C.V. - Contacto y Ubicación.">
+    <meta property="og:type" content="website">
+    
+    <!-- Fuentes Google: Montserrat (Títulos) e Inter (Texto) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Montserrat:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- Iconos Lucide -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    
+    <!-- Favicon usando el logo corporativo -->
+    <link rel="icon" type="image/png" href="logo%20toluca%20jet%20center%20V1.png">
+    
+    <!-- Cargamos la hoja de estilos con cache-buster -->
+    <link rel="stylesheet" href="styles.css?v=7">
+</head>
+<body>
+
+    <!-- Fondo de cielo sutil claro y limpio -->
+    <div class="sky-background">
+        <div class="glow-effect"></div>
+    </div>
+
+    <main class="card-container">
+        <!-- Encabezado / Logo Corporativo -->
+        <header class="card-header">
+            <div class="logo-wrapper">
+                <img src="logo%20toluca%20jet%20center%20V1.png" alt="Toluca Jet Center Logo" class="company-logo">
+            </div>
+            <div class="airline-badge">TOLUCA JET CENTER S.A. DE C.V.</div>
+        </header>
+
+        <!-- Sección de Perfil -->
+        <section class="profile-section">
+            <div class="profile-avatar-container">
+                <!-- Avatar circular con icono de avión en color blanco -->
+                <div class="avatar-fallback">
+                    <i data-lucide="plane" class="avatar-icon"></i>
+                </div>
+                <div class="avatar-glow"></div>
+            </div>
+            <h1 class="profile-name">Giorgio Grimaldo Rocha</h1>
+            <p class="profile-title">
+                <i data-lucide="plane-takeoff" class="title-icon"></i> Gerente Monterrey
+            </p>
+        </section>
+
+        <!-- Botones de Acción Rápida (Estilo Grid equilibrado) -->
+        <section class="actions-grid">
+            <a href="tel:+528331573399" class="btn btn-action" id="action-call" title="Llamar Celular">
+                <div class="btn-icon-wrapper"><i data-lucide="smartphone"></i></div>
+                <span>Móvil</span>
+            </a>
+            
+            <a href="https://wa.me/528331573399?text=Hola%20Giorgio%20Grimaldo%2C%20un%20gusto%20saludarle.%20Me%20pongo%20en%20contacto%20desde%20su%20tarjeta%20digital." target="_blank" rel="noopener" class="btn btn-action" id="action-whatsapp" title="WhatsApp">
+                <div class="btn-icon-wrapper"><i data-lucide="message-circle"></i></div>
+                <span>WhatsApp</span>
+            </a>
+            
+            <a href="mailto:gio.grimaldo@aeropartes.mx" class="btn btn-action" id="action-email" title="Enviar Correo">
+                <div class="btn-icon-wrapper"><i data-lucide="mail"></i></div>
+                <span>Correo</span>
+            </a>
+        </section>
+
+        <!-- Botón Principal: Guardar Contacto -->
+        <section class="primary-action-section">
+            <button id="btn-save-contact" class="btn-primary">
+                <i data-lucide="user-plus"></i>
+                <span>Guardar en Contactos</span>
+            </button>
+        </section>
+
+        <!-- Tabs de Información -->
+        <section class="info-tabs-section">
+            <div class="tab-headers">
+                <button class="tab-btn active" data-tab="contacto">
+                    <i data-lucide="phone-call"></i> Contacto
+                </button>
+                <button class="tab-btn" data-tab="ubicacion">
+                    <i data-lucide="map-pin"></i> Ubicación
+                </button>
+            </div>
+
+            <div class="tab-contents">
+                <!-- Contenido de Contacto -->
+                <div class="tab-pane active" id="tab-contacto">
+                    <!-- Teléfonos de Oficina -->
+                    <div class="contact-group">
+                        <h4>Teléfonos de Oficina</h4>
+                        <div class="contact-item">
+                            <i data-lucide="phone"></i>
+                            <a href="tel:+527222136315" class="contact-link">52 (722) 213 6315</a>
+                        </div>
+                        <div class="contact-item">
+                            <i data-lucide="phone"></i>
+                            <a href="tel:+527222137038" class="contact-link">52 (722) 213 7038</a>
+                        </div>
+                        <div class="contact-item">
+                            <i data-lucide="phone"></i>
+                            <a href="tel:+527222139758" class="contact-link">52 (722) 213 9758</a>
+                        </div>
+                    </div>
+                    
+                    <!-- Correos Electrónicos -->
+                    <div class="contact-group">
+                        <h4>Correo Electrónico</h4>
+                        <div class="contact-item">
+                            <i data-lucide="mail"></i>
+                            <a href="mailto:gio.grimaldo@aeropartes.mx" class="contact-link">gio.grimaldo@aeropartes.mx</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Contenido de Ubicación -->
+                <div class="tab-pane" id="tab-ubicacion">
+                    <p class="address-text">
+                        <i data-lucide="navigation"></i> 
+                        Manuel Ávila Camacho 1160,<br>
+                        Col. San Miguel Totoltepec,<br>
+                        Toluca, Edo. Méx. C.P. 50225.
+                    </p>
+                    <div class="map-container">
+                        <!-- Mapa interactivo exacto para Toluca Jet Center -->
+                        <iframe 
+                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3765.9221294862217!2d-99.5794833!3d19.339893!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x85d2753b8f106489%3A0xe54e60ea9b49ca2b!2sTOLUCA%20JET%20CENTER%2C%20S.A.%20DE%20C.V.!5e0!3m2!1ses-419!2smx!4v1710000000000!5m2!1ses-419!2smx" 
+                            width="100%" 
+                            height="180" 
+                            style="border:0;" 
+                            allowfullscreen="" 
+                            loading="lazy" 
+                            referrerpolicy="no-referrer-when-downgrade">
+                        </iframe>
+                    </div>
+                    <!-- Enlace de búsqueda directa permanente de Google Maps -->
+                    <a href="https://www.google.com/maps/search/?api=1&query=TOLUCA+JET+CENTER+S.A.+DE+C.V.+Manuel+Avila+Camacho+1160+San+Miguel+Totoltepec+Toluca+Mexico" target="_blank" rel="noopener" class="btn-secondary">
+                        <i data-lucide="external-link"></i> Cómo llegar (Google Maps)
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Enlaces Corporativos -->
+        <footer class="card-footer">
+            <a href="https://www.aeropartes.mx" target="_blank" rel="noopener" class="website-link">
+                <i data-lucide="globe"></i> www.aeropartes.mx
+            </a>
+            <div class="credits">Toluca Jet Center S.A. de C.V. © 2026.</div>
+        </footer>
+    </main>
+
+    <!-- Inicializar iconos -->
+    <script>
+        lucide.createIcons();
+    </script>
+    <script src="scripts.js"></script>
+</body>
+</html>
